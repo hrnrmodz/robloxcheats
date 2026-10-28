@@ -1,0 +1,958 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local CheatGUI = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local CloseBtn = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local TabBar = Instance.new("Frame")
+local CombatTab = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local VisualsTab = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local MovementTab = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local Content = Instance.new("ScrollingFrame")
+local CombatPage = Instance.new("Frame")
+local AimbotToggle = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local SilentAimToggle = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local TriggerbotToggle = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local FOVLabel = Instance.new("TextLabel")
+local FOVMinus = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+local FOVPlus = Instance.new("TextButton")
+local UICorner_10 = Instance.new("UICorner")
+local CamFOVLabel = Instance.new("TextLabel")
+local CamFOVPlus = Instance.new("TextButton")
+local UICorner_11 = Instance.new("UICorner")
+local CamFOVMinus = Instance.new("TextButton")
+local UICorner_12 = Instance.new("UICorner")
+local VisualsPage = Instance.new("Frame")
+local ESPToggle = Instance.new("TextButton")
+local UICorner_13 = Instance.new("UICorner")
+local BoxESPToggle = Instance.new("TextButton")
+local UICorner_14 = Instance.new("UICorner")
+local NameESPToggle = Instance.new("TextButton")
+local UICorner_15 = Instance.new("UICorner")
+local TracersToggle = Instance.new("TextButton")
+local UICorner_16 = Instance.new("UICorner")
+local MovementPage = Instance.new("Frame")
+local SpeedToggle = Instance.new("TextButton")
+local UICorner_17 = Instance.new("UICorner")
+local SpeedLabel = Instance.new("TextLabel")
+local SpeedMinus = Instance.new("TextButton")
+local UICorner_18 = Instance.new("UICorner")
+local SpeedPlus = Instance.new("TextButton")
+local UICorner_19 = Instance.new("UICorner")
+local FlyToggle = Instance.new("TextButton")
+local UICorner_20 = Instance.new("UICorner")
+local NoclipToggle = Instance.new("TextButton")
+local UICorner_21 = Instance.new("UICorner")
+local InfJumpToggle = Instance.new("TextButton")
+local UICorner_22 = Instance.new("UICorner")
+
+--Properties:
+
+CheatGUI.Name = "CheatGUI"
+CheatGUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+CheatGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+CheatGUI.DisplayOrder = 999
+CheatGUI.ResetOnSpawn = false
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = CheatGUI
+MainFrame.Active = true
+MainFrame.BackgroundColor3 = Color3.fromRGB(24, 24, 35)
+MainFrame.BackgroundTransparency = 0.050
+MainFrame.BorderColor3 = Color3.fromRGB(51, 153, 255)
+MainFrame.BorderSizePixel = 2
+MainFrame.ClipsDescendants = true
+MainFrame.Position = UDim2.new(0.0199999996, 0, 0.150000006, 0)
+MainFrame.Size = UDim2.new(0, 320, 0, 420)
+
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = MainFrame
+
+Title.Name = "Title"
+Title.Parent = MainFrame
+Title.BackgroundColor3 = Color3.fromRGB(20, 20, 29)
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(-0.146874994, 0, 0, 0)
+Title.Size = UDim2.new(1, 0, 0, 36)
+Title.ZIndex = 2
+Title.Text = "HRNR'S CHEAT MENU"
+Title.TextColor3 = Color3.fromRGB(76, 178, 255)
+Title.TextSize = 18.000
+Title.TextXAlignment = Enum.TextXAlignment.Right
+
+CloseBtn.Name = "CloseBtn"
+CloseBtn.Parent = MainFrame
+CloseBtn.BackgroundColor3 = Color3.fromRGB(204, 51, 51)
+CloseBtn.BackgroundTransparency = 0.200
+CloseBtn.BorderSizePixel = 0
+CloseBtn.Position = UDim2.new(1, -32, 0, 4)
+CloseBtn.Size = UDim2.new(0, 28, 0, 28)
+CloseBtn.ZIndex = 3
+CloseBtn.Text = "X"
+CloseBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseBtn.TextSize = 16.000
+
+UICorner_2.CornerRadius = UDim.new(0, 6)
+UICorner_2.Parent = CloseBtn
+
+TabBar.Name = "TabBar"
+TabBar.Parent = MainFrame
+TabBar.BackgroundColor3 = Color3.fromRGB(15, 15, 22)
+TabBar.BorderSizePixel = 0
+TabBar.Position = UDim2.new(0, 0, 0, 36)
+TabBar.Size = UDim2.new(1, 0, 0, 32)
+TabBar.ZIndex = 2
+
+CombatTab.Name = "CombatTab"
+CombatTab.Parent = TabBar
+CombatTab.BackgroundColor3 = Color3.fromRGB(38, 38, 56)
+CombatTab.BorderSizePixel = 0
+CombatTab.Position = UDim2.new(0, 4, 0, 2)
+CombatTab.Size = UDim2.new(0, 70, 0, 28)
+CombatTab.ZIndex = 3
+CombatTab.Text = "Combat"
+CombatTab.TextColor3 = Color3.fromRGB(229, 229, 255)
+CombatTab.TextSize = 13.000
+
+UICorner_3.CornerRadius = UDim.new(0, 4)
+UICorner_3.Parent = CombatTab
+
+VisualsTab.Name = "VisualsTab"
+VisualsTab.Parent = TabBar
+VisualsTab.BackgroundColor3 = Color3.fromRGB(25, 25, 38)
+VisualsTab.BorderSizePixel = 0
+VisualsTab.Position = UDim2.new(0, 78, 0, 2)
+VisualsTab.Size = UDim2.new(0, 70, 0, 28)
+VisualsTab.ZIndex = 3
+VisualsTab.Text = "Visuals"
+VisualsTab.TextColor3 = Color3.fromRGB(178, 178, 204)
+VisualsTab.TextSize = 13.000
+
+UICorner_4.CornerRadius = UDim.new(0, 4)
+UICorner_4.Parent = VisualsTab
+
+MovementTab.Name = "MovementTab"
+MovementTab.Parent = TabBar
+MovementTab.BackgroundColor3 = Color3.fromRGB(25, 25, 38)
+MovementTab.BorderSizePixel = 0
+MovementTab.Position = UDim2.new(0, 152, 0, 2)
+MovementTab.Size = UDim2.new(0, 80, 0, 28)
+MovementTab.ZIndex = 3
+MovementTab.Text = "Movement"
+MovementTab.TextColor3 = Color3.fromRGB(178, 178, 204)
+MovementTab.TextSize = 13.000
+
+UICorner_5.CornerRadius = UDim.new(0, 4)
+UICorner_5.Parent = MovementTab
+
+Content.Name = "Content"
+Content.Parent = MainFrame
+Content.BackgroundColor3 = Color3.fromRGB(20, 20, 28)
+Content.BorderSizePixel = 0
+Content.Position = UDim2.new(0, 0, 0, 68)
+Content.Size = UDim2.new(1, 0, 1, -68)
+Content.ZIndex = 2
+Content.CanvasSize = UDim2.new(0, 0, 0, 500)
+Content.ScrollBarThickness = 4
+
+CombatPage.Name = "CombatPage"
+CombatPage.Parent = Content
+CombatPage.BackgroundColor3 = Color3.fromRGB(20, 20, 28)
+CombatPage.BackgroundTransparency = 1.000
+CombatPage.BorderSizePixel = 0
+CombatPage.Size = UDim2.new(1, 0, 0, 400)
+CombatPage.ZIndex = 2
+
+AimbotToggle.Name = "AimbotToggle"
+AimbotToggle.Parent = CombatPage
+AimbotToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
+AimbotToggle.BorderSizePixel = 0
+AimbotToggle.Position = UDim2.new(0, 12, 0, 12)
+AimbotToggle.Size = UDim2.new(1, -24, 0, 36)
+AimbotToggle.ZIndex = 3
+AimbotToggle.Text = "Aimbot: OFF"
+AimbotToggle.TextColor3 = Color3.fromRGB(229, 229, 255)
+AimbotToggle.TextSize = 14.000
+
+UICorner_6.CornerRadius = UDim.new(0, 6)
+UICorner_6.Parent = AimbotToggle
+
+SilentAimToggle.Name = "SilentAimToggle"
+SilentAimToggle.Parent = CombatPage
+SilentAimToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
+SilentAimToggle.BorderSizePixel = 0
+SilentAimToggle.Position = UDim2.new(0, 12, 0, 56)
+SilentAimToggle.Size = UDim2.new(1, -24, 0, 36)
+SilentAimToggle.ZIndex = 3
+SilentAimToggle.Text = "Silent Aim: OFF"
+SilentAimToggle.TextColor3 = Color3.fromRGB(229, 229, 255)
+SilentAimToggle.TextSize = 14.000
+
+UICorner_7.CornerRadius = UDim.new(0, 6)
+UICorner_7.Parent = SilentAimToggle
+
+TriggerbotToggle.Name = "TriggerbotToggle"
+TriggerbotToggle.Parent = CombatPage
+TriggerbotToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
+TriggerbotToggle.BorderSizePixel = 0
+TriggerbotToggle.Position = UDim2.new(0, 12, 0, 100)
+TriggerbotToggle.Size = UDim2.new(1, -24, 0, 36)
+TriggerbotToggle.ZIndex = 3
+TriggerbotToggle.Text = "Triggerbot: OFF"
+TriggerbotToggle.TextColor3 = Color3.fromRGB(229, 229, 255)
+TriggerbotToggle.TextSize = 14.000
+
+UICorner_8.CornerRadius = UDim.new(0, 6)
+UICorner_8.Parent = TriggerbotToggle
+
+FOVLabel.Name = "FOVLabel"
+FOVLabel.Parent = CombatPage
+FOVLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FOVLabel.BackgroundTransparency = 1.000
+FOVLabel.Position = UDim2.new(0, 12, 0, 148)
+FOVLabel.Size = UDim2.new(1, -24, 0, 20)
+FOVLabel.ZIndex = 3
+FOVLabel.Text = "Aim FOV: 80"
+FOVLabel.TextColor3 = Color3.fromRGB(178, 178, 216)
+FOVLabel.TextSize = 13.000
+FOVLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+FOVMinus.Name = "FOVMinus"
+FOVMinus.Parent = CombatPage
+FOVMinus.BackgroundColor3 = Color3.fromRGB(38, 38, 56)
+FOVMinus.BorderSizePixel = 0
+FOVMinus.Position = UDim2.new(0, 12, 0, 172)
+FOVMinus.Size = UDim2.new(0, 40, 0, 30)
+FOVMinus.ZIndex = 3
+FOVMinus.Text = "-"
+FOVMinus.TextColor3 = Color3.fromRGB(255, 255, 255)
+FOVMinus.TextSize = 18.000
+
+UICorner_9.CornerRadius = UDim.new(0, 4)
+UICorner_9.Parent = FOVMinus
+
+FOVPlus.Name = "FOVPlus"
+FOVPlus.Parent = CombatPage
+FOVPlus.BackgroundColor3 = Color3.fromRGB(38, 38, 56)
+FOVPlus.BorderSizePixel = 0
+FOVPlus.Position = UDim2.new(0, 60, 0, 172)
+FOVPlus.Size = UDim2.new(0, 40, 0, 30)
+FOVPlus.ZIndex = 3
+FOVPlus.Text = "+"
+FOVPlus.TextColor3 = Color3.fromRGB(255, 255, 255)
+FOVPlus.TextSize = 18.000
+
+UICorner_10.CornerRadius = UDim.new(0, 4)
+UICorner_10.Parent = FOVPlus
+
+CamFOVLabel.Name = "CamFOVLabel"
+CamFOVLabel.Parent = CombatPage
+CamFOVLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CamFOVLabel.BackgroundTransparency = 1.000
+CamFOVLabel.Position = UDim2.new(0, 12, 0, 216)
+CamFOVLabel.Size = UDim2.new(1, -24, 0, 20)
+CamFOVLabel.ZIndex = 3
+CamFOVLabel.Text = "Camera FOV: 70"
+CamFOVLabel.TextColor3 = Color3.fromRGB(178, 178, 216)
+CamFOVLabel.TextSize = 13.000
+CamFOVLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+CamFOVPlus.Name = "CamFOVPlus"
+CamFOVPlus.Parent = CombatPage
+CamFOVPlus.BackgroundColor3 = Color3.fromRGB(38, 38, 56)
+CamFOVPlus.BorderSizePixel = 0
+CamFOVPlus.Position = UDim2.new(0, 60, 0, 245)
+CamFOVPlus.Size = UDim2.new(0, 40, 0, 30)
+CamFOVPlus.ZIndex = 3
+CamFOVPlus.Text = "+"
+CamFOVPlus.TextColor3 = Color3.fromRGB(255, 255, 255)
+CamFOVPlus.TextSize = 18.000
+
+UICorner_11.CornerRadius = UDim.new(0, 4)
+UICorner_11.Parent = CamFOVPlus
+
+CamFOVMinus.Name = "CamFOVMinus"
+CamFOVMinus.Parent = CombatPage
+CamFOVMinus.BackgroundColor3 = Color3.fromRGB(38, 38, 56)
+CamFOVMinus.BorderSizePixel = 0
+CamFOVMinus.Position = UDim2.new(0, 12, 0, 245)
+CamFOVMinus.Size = UDim2.new(0, 40, 0, 30)
+CamFOVMinus.ZIndex = 3
+CamFOVMinus.Text = "-"
+CamFOVMinus.TextColor3 = Color3.fromRGB(255, 255, 255)
+CamFOVMinus.TextSize = 18.000
+
+UICorner_12.CornerRadius = UDim.new(0, 4)
+UICorner_12.Parent = CamFOVMinus
+
+VisualsPage.Name = "VisualsPage"
+VisualsPage.Parent = Content
+VisualsPage.BackgroundColor3 = Color3.fromRGB(20, 20, 28)
+VisualsPage.BackgroundTransparency = 1.000
+VisualsPage.BorderSizePixel = 0
+VisualsPage.Size = UDim2.new(1, 0, 0, 400)
+VisualsPage.Visible = false
+VisualsPage.ZIndex = 2
+
+ESPToggle.Name = "ESPToggle"
+ESPToggle.Parent = VisualsPage
+ESPToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
+ESPToggle.BorderSizePixel = 0
+ESPToggle.Position = UDim2.new(0, 12, 0, 12)
+ESPToggle.Size = UDim2.new(1, -24, 0, 36)
+ESPToggle.ZIndex = 3
+ESPToggle.Text = "ESP: OFF"
+ESPToggle.TextColor3 = Color3.fromRGB(229, 229, 255)
+ESPToggle.TextSize = 14.000
+
+UICorner_13.CornerRadius = UDim.new(0, 6)
+UICorner_13.Parent = ESPToggle
+
+BoxESPToggle.Name = "BoxESPToggle"
+BoxESPToggle.Parent = VisualsPage
+BoxESPToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
+BoxESPToggle.BorderSizePixel = 0
+BoxESPToggle.Position = UDim2.new(0, 12, 0, 56)
+BoxESPToggle.Size = UDim2.new(1, -24, 0, 36)
+BoxESPToggle.ZIndex = 3
+BoxESPToggle.Text = "Box ESP: OFF"
+BoxESPToggle.TextColor3 = Color3.fromRGB(229, 229, 255)
+BoxESPToggle.TextSize = 14.000
+
+UICorner_14.CornerRadius = UDim.new(0, 6)
+UICorner_14.Parent = BoxESPToggle
+
+NameESPToggle.Name = "NameESPToggle"
+NameESPToggle.Parent = VisualsPage
+NameESPToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
+NameESPToggle.BorderSizePixel = 0
+NameESPToggle.Position = UDim2.new(0, 12, 0, 100)
+NameESPToggle.Size = UDim2.new(1, -24, 0, 36)
+NameESPToggle.ZIndex = 3
+NameESPToggle.Text = "Name ESP: OFF"
+NameESPToggle.TextColor3 = Color3.fromRGB(229, 229, 255)
+NameESPToggle.TextSize = 14.000
+
+UICorner_15.CornerRadius = UDim.new(0, 6)
+UICorner_15.Parent = NameESPToggle
+
+TracersToggle.Name = "TracersToggle"
+TracersToggle.Parent = VisualsPage
+TracersToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
+TracersToggle.BorderSizePixel = 0
+TracersToggle.Position = UDim2.new(0, 12, 0, 144)
+TracersToggle.Size = UDim2.new(1, -24, 0, 36)
+TracersToggle.ZIndex = 3
+TracersToggle.Text = "Tracers: OFF"
+TracersToggle.TextColor3 = Color3.fromRGB(229, 229, 255)
+TracersToggle.TextSize = 14.000
+
+UICorner_16.CornerRadius = UDim.new(0, 6)
+UICorner_16.Parent = TracersToggle
+
+MovementPage.Name = "MovementPage"
+MovementPage.Parent = Content
+MovementPage.BackgroundColor3 = Color3.fromRGB(20, 20, 28)
+MovementPage.BackgroundTransparency = 1.000
+MovementPage.BorderSizePixel = 0
+MovementPage.Size = UDim2.new(1, 0, 0, 400)
+MovementPage.Visible = false
+MovementPage.ZIndex = 2
+
+SpeedToggle.Name = "SpeedToggle"
+SpeedToggle.Parent = MovementPage
+SpeedToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
+SpeedToggle.BorderSizePixel = 0
+SpeedToggle.Position = UDim2.new(0, 12, 0, 12)
+SpeedToggle.Size = UDim2.new(1, -24, 0, 36)
+SpeedToggle.ZIndex = 3
+SpeedToggle.Text = "Speed: OFF"
+SpeedToggle.TextColor3 = Color3.fromRGB(229, 229, 255)
+SpeedToggle.TextSize = 14.000
+
+UICorner_17.CornerRadius = UDim.new(0, 6)
+UICorner_17.Parent = SpeedToggle
+
+SpeedLabel.Name = "SpeedLabel"
+SpeedLabel.Parent = MovementPage
+SpeedLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+SpeedLabel.BackgroundTransparency = 1.000
+SpeedLabel.Position = UDim2.new(0, 12, 0, 56)
+SpeedLabel.Size = UDim2.new(1, -24, 0, 20)
+SpeedLabel.ZIndex = 3
+SpeedLabel.Text = "WalkSpeed: 16"
+SpeedLabel.TextColor3 = Color3.fromRGB(178, 178, 216)
+SpeedLabel.TextSize = 13.000
+SpeedLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+SpeedMinus.Name = "SpeedMinus"
+SpeedMinus.Parent = MovementPage
+SpeedMinus.BackgroundColor3 = Color3.fromRGB(38, 38, 56)
+SpeedMinus.BorderSizePixel = 0
+SpeedMinus.Position = UDim2.new(0, 12, 0, 80)
+SpeedMinus.Size = UDim2.new(0, 40, 0, 30)
+SpeedMinus.ZIndex = 3
+SpeedMinus.Text = "-"
+SpeedMinus.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedMinus.TextSize = 18.000
+
+UICorner_18.CornerRadius = UDim.new(0, 4)
+UICorner_18.Parent = SpeedMinus
+
+SpeedPlus.Name = "SpeedPlus"
+SpeedPlus.Parent = MovementPage
+SpeedPlus.BackgroundColor3 = Color3.fromRGB(38, 38, 56)
+SpeedPlus.BorderSizePixel = 0
+SpeedPlus.Position = UDim2.new(0, 60, 0, 80)
+SpeedPlus.Size = UDim2.new(0, 40, 0, 30)
+SpeedPlus.ZIndex = 3
+SpeedPlus.Text = "+"
+SpeedPlus.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedPlus.TextSize = 18.000
+
+UICorner_19.CornerRadius = UDim.new(0, 4)
+UICorner_19.Parent = SpeedPlus
+
+FlyToggle.Name = "FlyToggle"
+FlyToggle.Parent = MovementPage
+FlyToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
+FlyToggle.BorderSizePixel = 0
+FlyToggle.Position = UDim2.new(0, 12, 0, 124)
+FlyToggle.Size = UDim2.new(1, -24, 0, 36)
+FlyToggle.ZIndex = 3
+FlyToggle.Text = "Fly: OFF"
+FlyToggle.TextColor3 = Color3.fromRGB(229, 229, 255)
+FlyToggle.TextSize = 14.000
+
+UICorner_20.CornerRadius = UDim.new(0, 6)
+UICorner_20.Parent = FlyToggle
+
+NoclipToggle.Name = "NoclipToggle"
+NoclipToggle.Parent = MovementPage
+NoclipToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
+NoclipToggle.BorderSizePixel = 0
+NoclipToggle.Position = UDim2.new(0, 12, 0, 168)
+NoclipToggle.Size = UDim2.new(1, -24, 0, 36)
+NoclipToggle.ZIndex = 3
+NoclipToggle.Text = "Noclip: OFF"
+NoclipToggle.TextColor3 = Color3.fromRGB(229, 229, 255)
+NoclipToggle.TextSize = 14.000
+
+UICorner_21.CornerRadius = UDim.new(0, 6)
+UICorner_21.Parent = NoclipToggle
+
+InfJumpToggle.Name = "InfJumpToggle"
+InfJumpToggle.Parent = MovementPage
+InfJumpToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
+InfJumpToggle.BorderSizePixel = 0
+InfJumpToggle.Position = UDim2.new(0, 12, 0, 212)
+InfJumpToggle.Size = UDim2.new(1, -24, 0, 36)
+InfJumpToggle.ZIndex = 3
+InfJumpToggle.Text = "Infinite Jump: OFF"
+InfJumpToggle.TextColor3 = Color3.fromRGB(229, 229, 255)
+InfJumpToggle.TextSize = 14.000
+
+UICorner_22.CornerRadius = UDim.new(0, 6)
+UICorner_22.Parent = InfJumpToggle
+
+-- Scripts:
+
+local function SNKHFD_fake_script() -- CheatGUI.MainController 
+	local script = Instance.new('LocalScript', CheatGUI)
+
+	-- HRNR Cheat GUI Controller
+	-- Fully client-side GUI + feature hooks for Studio testing / executor use
+	
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local UserInputService = game:GetService("UserInputService")
+	local LocalPlayer = Players.LocalPlayer
+	local Camera = workspace.CurrentCamera
+	
+	local gui = script.Parent
+	local main = gui:WaitForChild("MainFrame")
+	local content = main:WaitForChild("Content")
+	local combatPage = content:WaitForChild("CombatPage")
+	local visualsPage = content:WaitForChild("VisualsPage")
+	local movementPage = content:WaitForChild("MovementPage")
+	
+	local tabBar = main:WaitForChild("TabBar")
+	local combatTab = tabBar:WaitForChild("CombatTab")
+	local visualsTab = tabBar:WaitForChild("VisualsTab")
+	local movementTab = tabBar:WaitForChild("MovementTab")
+	local closeBtn = main:WaitForChild("CloseBtn")
+	
+	-- State
+	local state = {
+		Aimbot = false,
+		SilentAim = false,
+		Triggerbot = false,
+		ESP = false,
+		BoxESP = false,
+		NameESP = false,
+		Tracers = false,
+		Speed = false,
+		Fly = false,
+		Noclip = false,
+		InfJump = false,
+		AimFOV = 80,
+		WalkSpeed = 16,
+		DefaultSpeed = 16,
+	}
+	
+	local connections = {}
+	local drawings = {} -- for ESP objects
+	
+	-- Helpers
+	local function setToggle(btn, on)
+		if on then
+			btn.Text = btn.Name:gsub("Toggle", "") .. ": ON"
+			btn.BackgroundColor3 = Color3.fromRGB(40, 120, 80)
+		else
+			btn.Text = btn.Name:gsub("Toggle", "") .. ": OFF"
+			btn.BackgroundColor3 = Color3.fromRGB(30, 30, 46)
+		end
+	end
+	
+	local function switchTab(page)
+		combatPage.Visible = (page == combatPage)
+		visualsPage.Visible = (page == visualsPage)
+		movementPage.Visible = (page == movementPage)
+	
+		combatTab.BackgroundColor3 = (page == combatPage) and Color3.fromRGB(38, 38, 56) or Color3.fromRGB(26, 26, 38)
+		visualsTab.BackgroundColor3 = (page == visualsPage) and Color3.fromRGB(38, 38, 56) or Color3.fromRGB(26, 26, 38)
+		movementTab.BackgroundColor3 = (page == movementPage) and Color3.fromRGB(38, 38, 56) or Color3.fromRGB(26, 26, 38)
+	end
+	
+	-- Tab switching
+	combatTab.MouseButton1Click:Connect(function() switchTab(combatPage) end)
+	visualsTab.MouseButton1Click:Connect(function() switchTab(visualsPage) end)
+	movementTab.MouseButton1Click:Connect(function() switchTab(movementPage) end)
+	
+	closeBtn.MouseButton1Click:Connect(function()
+		main.Visible = false
+	end)
+	
+	-- Toggle GUI with RightShift
+	UserInputService.InputBegan:Connect(function(input, gpe)
+		if gpe then return end
+		if input.KeyCode == Enum.KeyCode.Insert then
+			main.Visible = not main.Visible
+		end
+	end)
+	
+	-- Make frame draggable
+	local dragging = false
+	local dragStart, startPos
+	main.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = main.Position
+		end
+	end)
+	main.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = false
+		end
+	end)
+	UserInputService.InputChanged:Connect(function(input)
+		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+			local delta = input.Position - dragStart
+			main.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
+	end)
+	
+	-- ========== COMBAT ==========
+	local aimbotBtn = combatPage:WaitForChild("AimbotToggle")
+	local silentBtn = combatPage:WaitForChild("SilentAimToggle")
+	local triggerBtn = combatPage:WaitForChild("TriggerbotToggle")
+	local fovLabel = combatPage:WaitForChild("FOVLabel")
+	local fovMinus = combatPage:WaitForChild("FOVMinus")
+	local fovPlus = combatPage:WaitForChild("FOVPlus")
+	
+	aimbotBtn.MouseButton1Click:Connect(function()
+		state.Aimbot = not state.Aimbot
+		setToggle(aimbotBtn, state.Aimbot)
+	end)
+	
+	silentBtn.MouseButton1Click:Connect(function()
+		state.SilentAim = not state.SilentAim
+		setToggle(silentBtn, state.SilentAim)
+	end)
+	
+	triggerBtn.MouseButton1Click:Connect(function()
+		state.Triggerbot = not state.Triggerbot
+		setToggle(triggerBtn, state.Triggerbot)
+	end)
+	
+	fovMinus.MouseButton1Click:Connect(function()
+		state.AimFOV = math.max(10, state.AimFOV - 5)
+		fovLabel.Text = "Aim FOV: " .. state.AimFOV
+	end)
+	
+	fovPlus.MouseButton1Click:Connect(function()
+		state.AimFOV = math.min(360, state.AimFOV + 5)
+		fovLabel.Text = "Aim FOV: " .. state.AimFOV
+	end)
+	
+	-- ========== VISUALS ==========
+	local espBtn = visualsPage:WaitForChild("ESPToggle")
+	local boxBtn = visualsPage:WaitForChild("BoxESPToggle")
+	local nameBtn = visualsPage:WaitForChild("NameESPToggle")
+	local tracersBtn = visualsPage:WaitForChild("TracersToggle")
+	
+	local function clearESP()
+		for _, d in pairs(drawings) do
+			if typeof(d) == "Instance" then
+				d:Destroy()
+			end
+		end
+		drawings = {}
+	end
+	
+	local function createESPFor(player)
+		if player == LocalPlayer then return end
+		local char = player.Character
+		if not char then return end
+		local hrp = char:FindFirstChild("HumanoidRootPart")
+		local head = char:FindFirstChild("Head")
+		local hum = char:FindFirstChildOfClass("Humanoid")
+		if not hrp or not head or not hum then return end
+	
+		if state.NameESP then
+			local bill = Instance.new("BillboardGui")
+			bill.Name = "NameESP"
+			bill.Adornee = head
+			bill.Size = UDim2.new(0, 120, 0, 30)
+			bill.StudsOffset = Vector3.new(0, 2.5, 0)
+			bill.AlwaysOnTop = true
+			bill.Parent = head
+	
+			local label = Instance.new("TextLabel")
+			label.Size = UDim2.new(1, 0, 1, 0)
+			label.BackgroundTransparency = 1
+			label.Text = player.Name
+			label.TextColor3 = Color3.fromRGB(80, 180, 255)
+			label.TextStrokeTransparency = 0.4
+			label.Font = Enum.Font.GothamBold
+			label.TextSize = 14
+			label.Parent = bill
+	
+			table.insert(drawings, bill)
+		end
+	
+		if state.BoxESP then
+			local highlight = Instance.new("Highlight")
+			highlight.Name = "BoxESP"
+			highlight.Adornee = char
+			highlight.FillColor = Color3.fromRGB(80, 180, 255)
+			highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+			highlight.FillTransparency = 0.7
+			highlight.OutlineTransparency = 0
+			highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+			highlight.Parent = char
+			table.insert(drawings, highlight)
+		end
+	end
+	
+	local function refreshESP()
+		clearESP()
+		if not (state.ESP or state.BoxESP or state.NameESP or state.Tracers) then return end
+		for _, plr in ipairs(Players:GetPlayers()) do
+			createESPFor(plr)
+		end
+	end
+	
+	espBtn.MouseButton1Click:Connect(function()
+		state.ESP = not state.ESP
+		setToggle(espBtn, state.ESP)
+		if state.ESP then
+			state.BoxESP = true
+			state.NameESP = true
+			setToggle(boxBtn, true)
+			setToggle(nameBtn, true)
+		else
+			state.BoxESP = false
+			state.NameESP = false
+			state.Tracers = false
+			setToggle(boxBtn, false)
+			setToggle(nameBtn, false)
+			setToggle(tracersBtn, false)
+		end
+		refreshESP()
+	end)
+	
+	boxBtn.MouseButton1Click:Connect(function()
+		state.BoxESP = not state.BoxESP
+		setToggle(boxBtn, state.BoxESP)
+		refreshESP()
+	end)
+	
+	nameBtn.MouseButton1Click:Connect(function()
+		state.NameESP = not state.NameESP
+		setToggle(nameBtn, state.NameESP)
+		refreshESP()
+	end)
+	
+	tracersBtn.MouseButton1Click:Connect(function()
+		state.Tracers = not state.Tracers
+		setToggle(tracersBtn, state.Tracers)
+		-- Tracers can be extended with Drawing library or Beam objects
+	end)
+	
+	Players.PlayerAdded:Connect(function(plr)
+		plr.CharacterAdded:Connect(function()
+			task.wait(0.5)
+			if state.ESP or state.BoxESP or state.NameESP then
+				createESPFor(plr)
+			end
+		end)
+	end)
+	
+	for _, plr in ipairs(Players:GetPlayers()) do
+		plr.CharacterAdded:Connect(function()
+			task.wait(0.5)
+			if state.ESP or state.BoxESP or state.NameESP then
+				createESPFor(plr)
+			end
+		end)
+	end
+	-- ========== CAMERA FOV CHANGER ==========
+	local Camera = workspace.CurrentCamera
+	
+	-- state
+	state.CamFOV = 70          -- default Roblox FOV
+	state.DefaultCamFOV = 70
+	
+	-- grab the UI (adjust names if you put them elsewhere)
+	local camFovLabel = combatPage:WaitForChild("CamFOVLabel")   -- or your label
+	local camFovMinus = combatPage:WaitForChild("CamFOVMinus")
+	local camFovPlus  = combatPage:WaitForChild("CamFOVPlus")
+	
+	-- apply function
+	local function applyCamFOV()
+		Camera.FieldOfView = state.CamFOV
+	end
+	
+	-- buttons
+	camFovMinus.MouseButton1Click:Connect(function()
+		state.CamFOV = math.clamp(state.CamFOV - 5, 1, 120)
+		camFovLabel.Text = "Camera FOV: " .. state.CamFOV
+		applyCamFOV()
+	end)
+	
+	camFovPlus.MouseButton1Click:Connect(function()
+		state.CamFOV = math.clamp(state.CamFOV + 5, 1, 120)
+		camFovLabel.Text = "Camera FOV: " .. state.CamFOV
+		applyCamFOV()
+	end)
+	
+	-- keep it forced every frame (stops games that reset FOV)
+	if not connections.CamFOV then
+		connections.CamFOV = RunService.RenderStepped:Connect(function()
+			if Camera.FieldOfView ~= state.CamFOV then
+				Camera.FieldOfView = state.CamFOV
+			end
+		end)
+	end
+	
+	-- reset on character respawn if you want default back
+	LocalPlayer.CharacterAdded:Connect(function()
+		-- optional: uncomment if you want FOV to reset on death
+		-- state.CamFOV = state.DefaultCamFOV
+		-- camFovLabel.Text = "Camera FOV: " .. state.CamFOV
+		-- applyCamFOV()
+	end)
+	
+	-- ========== MOVEMENT ==========
+	local speedBtn = movementPage:WaitForChild("SpeedToggle")
+	local speedLabel = movementPage:WaitForChild("SpeedLabel")
+	local speedMinus = movementPage:WaitForChild("SpeedMinus")
+	local speedPlus = movementPage:WaitForChild("SpeedPlus")
+	local flyBtn = movementPage:WaitForChild("FlyToggle")
+	local noclipBtn = movementPage:WaitForChild("NoclipToggle")
+	local infJumpBtn = movementPage:WaitForChild("InfJumpToggle")
+	
+	local function applySpeed()
+		local char = LocalPlayer.Character
+		if not char then return end
+		local hum = char:FindFirstChildOfClass("Humanoid")
+		if hum then
+			hum.WalkSpeed = state.Speed and state.WalkSpeed or state.DefaultSpeed
+		end
+	end
+	
+	speedBtn.MouseButton1Click:Connect(function()
+		state.Speed = not state.Speed
+		setToggle(speedBtn, state.Speed)
+		applySpeed()
+	end)
+	
+	speedMinus.MouseButton1Click:Connect(function()
+		state.WalkSpeed = math.max(16, state.WalkSpeed - 4)
+		speedLabel.Text = "WalkSpeed: " .. state.WalkSpeed
+		if state.Speed then applySpeed() end
+	end)
+	
+	speedPlus.MouseButton1Click:Connect(function()
+		state.WalkSpeed = math.min(200, state.WalkSpeed + 4)
+		speedLabel.Text = "WalkSpeed: " .. state.WalkSpeed
+		if state.Speed then applySpeed() end
+	end)
+	
+	-- Fly
+	local flyBV, flyBG
+	flyBtn.MouseButton1Click:Connect(function()
+		state.Fly = not state.Fly
+		setToggle(flyBtn, state.Fly)
+	
+		local char = LocalPlayer.Character
+		if not char then return end
+		local hrp = char:FindFirstChild("HumanoidRootPart")
+		if not hrp then return end
+	
+		if state.Fly then
+			flyBV = Instance.new("BodyVelocity")
+			flyBV.MaxForce = Vector3.new(1e5, 1e5, 1e5)
+			flyBV.Velocity = Vector3.zero
+			flyBV.Parent = hrp
+	
+			flyBG = Instance.new("BodyGyro")
+			flyBG.MaxTorque = Vector3.new(1e5, 1e5, 1e5)
+			flyBG.P = 1e4
+			flyBG.Parent = hrp
+	
+			connections.Fly = RunService.RenderStepped:Connect(function()
+				if not state.Fly or not hrp or not hrp.Parent then return end
+				local camCF = Camera.CFrame
+				local move = Vector3.zero
+				if UserInputService:IsKeyDown(Enum.KeyCode.W) then move = move + camCF.LookVector end
+				if UserInputService:IsKeyDown(Enum.KeyCode.S) then move = move - camCF.LookVector end
+				if UserInputService:IsKeyDown(Enum.KeyCode.A) then move = move - camCF.RightVector end
+				if UserInputService:IsKeyDown(Enum.KeyCode.D) then move = move + camCF.RightVector end
+				if UserInputService:IsKeyDown(Enum.KeyCode.Space) then move = move + Vector3.new(0, 1, 0) end
+				if UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) then move = move - Vector3.new(0, 1, 0) end
+				flyBV.Velocity = move.Magnitude > 0 and move.Unit * 60 or Vector3.zero
+				flyBG.CFrame = camCF
+			end)
+		else
+			if connections.Fly then connections.Fly:Disconnect() end
+			if flyBV then flyBV:Destroy() end
+			if flyBG then flyBG:Destroy() end
+			flyBV, flyBG = nil, nil
+		end
+	end)
+	
+	-- Noclip
+	noclipBtn.MouseButton1Click:Connect(function()
+		state.Noclip = not state.Noclip
+		setToggle(noclipBtn, state.Noclip)
+	
+		if state.Noclip then
+			connections.Noclip = RunService.Stepped:Connect(function()
+				local char = LocalPlayer.Character
+				if not char then return end
+				for _, part in ipairs(char:GetDescendants()) do
+					if part:IsA("BasePart") then
+						part.CanCollide = false
+					end
+				end
+			end)
+		else
+			if connections.Noclip then connections.Noclip:Disconnect() end
+			local char = LocalPlayer.Character
+			if char then
+				for _, part in ipairs(char:GetDescendants()) do
+					if part:IsA("BasePart") and part.Name ~= "HumanoidRootPart" then
+						part.CanCollide = true
+					end
+				end
+			end
+		end
+	end)
+	
+	-- Infinite Jump
+	infJumpBtn.MouseButton1Click:Connect(function()
+		state.InfJump = not state.InfJump
+		setToggle(infJumpBtn, state.InfJump)
+	end)
+	
+	UserInputService.JumpRequest:Connect(function()
+		if not state.InfJump then return end
+		local char = LocalPlayer.Character
+		if not char then return end
+		local hum = char:FindFirstChildOfClass("Humanoid")
+		if hum then
+			hum:ChangeState(Enum.HumanoidStateType.Jumping)
+		end
+	end)
+	
+	-- Re-apply speed / fly on character respawn
+	LocalPlayer.CharacterAdded:Connect(function(char)
+		task.wait(0.3)
+		if state.Speed then applySpeed() end
+		-- reset fly state on death
+		if state.Fly then
+			state.Fly = false
+			setToggle(flyBtn, false)
+			if connections.Fly then connections.Fly:Disconnect() end
+		end
+	end)
+	
+	-- Aimbot / Silent / Trigger loops (basic target selection)
+	local function getClosestPlayer()
+		local closest, closestDist = nil, state.AimFOV
+		local mousePos = UserInputService:GetMouseLocation()
+		for _, plr in ipairs(Players:GetPlayers()) do
+			if plr ~= LocalPlayer and plr.Character then
+				local head = plr.Character:FindFirstChild("Head")
+				if head then
+					local screenPos, onScreen = Camera:WorldToViewportPoint(head.Position)
+					if onScreen then
+						local dist = (Vector2.new(screenPos.X, screenPos.Y) - mousePos).Magnitude
+						if dist < closestDist then
+							closestDist = dist
+							closest = plr
+						end
+					end
+				end
+			end
+		end
+		return closest
+	end
+	
+	connections.Combat = RunService.RenderStepped:Connect(function()
+		if not (state.Aimbot or state.SilentAim or state.Triggerbot) then return end
+		local target = getClosestPlayer()
+		if not target or not target.Character then return end
+		local head = target.Character:FindFirstChild("Head")
+		if not head then return end
+	
+		if state.Aimbot then
+			Camera.CFrame = CFrame.new(Camera.CFrame.Position, head.Position)
+		end
+	
+		-- Silent aim and triggerbot are stubs ready for game-specific remote hooks
+		-- You can extend them by finding the game's fire remote / mouse event
+	end)
+	
+	
+	
+	print("[HRNR Cheat GUI] Loaded. Insert to toggle menu.")
+	
+end
+coroutine.wrap(SNKHFD_fake_script)()
